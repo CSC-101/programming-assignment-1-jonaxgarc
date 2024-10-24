@@ -31,25 +31,14 @@ class Price:
 
 # Representation of a two-dimensional point.
 class Point:
-    # Initialize a new Point object.
-    # input: x-coordinate as a float
-    # input: y-coordinate as a float
+
     def __init__(self, x: float, y: float):
         self.x = x
         self.y = y
 
-
-    # Provide a developer-friendly string representation of the object.
-    # input: Point for which a string representation is desired. 
-    # output: string representation
     def __repr__(self) -> str:
         return 'Point({}, {})'.format(self.x, self.y)
 
-
-    # Compare the Point object with another value to determine equality.
-    # input: Point against which to compare
-    # input: Another value to compare to the Point
-    # output: boolean indicating equality
     def __eq__(self, other) -> bool:
         return (other is self or
                 type(other) == Point and
@@ -59,53 +48,30 @@ class Point:
 
 # Representation of an axis-aligned rectangle.
 class Rectangle:
-    # Initialize a new Rectangle object.
-    # input: top-left corner as a Point
-    # input: bottom-right corner as a Point
     def __init__(self, top_left: Point, bottom_right: Point):
         self.top_left = top_left
         self.bottom_right = bottom_right
 
-
-    # Provide a developer-friendly string representation of the object.
-    # input: Rectangle for which a string representation is desired. 
-    # output: string representation
     def __repr__(self) -> str:
         return 'Rectangle({}, {})'.format(self.top_left, self.bottom_right)
 
 
-    # Compare the Rectangle object with another value to determine equality.
-    # input: Rectangle against which to compare
-    # input: Another value to compare to the Rectangle
-    # output: boolean indicating equality
     def __eq__(self, other) -> bool:
         return (other is self or
                 type(other) == Rectangle and
                 self.top_left == other.top_left and
                 self.bottom_right == other.bottom_right)
 
-
 # Representation of a circle.
 class Circle:
-    # Initialize a new Circle object.
-    # input: center as a Point
-    # input: radius as a float
     def __init__(self, center: Point, radius: float):
         self.center = center
         self.radius = radius
 
 
-    # Provide a developer-friendly string representation of the object.
-    # input: Circle for which a string representation is desired. 
-    # output: string representation
     def __repr__(self) -> str:
         return 'Circle({}, {})'.format(self.center, self.radius)
 
-
-    # Compare the Circle object with another value to determine equality.
-    # input: Circle against which to compare
-    # input: Another value to compare to the Circle
-    # output: boolean indicating equality
     def __eq__(self, other) -> bool:
         return (other is self or
                 type(other) == Circle and
@@ -115,25 +81,14 @@ class Circle:
 
 # Representation of a book.
 class Book:
-    # Initialize a new Book object.
-    # input: the book's authors as a list of strings
-    # input: the book's title as a string
+
     def __init__(self, authors: list[str], title: str):
         self.authors = authors
         self.title = title
 
-
-    # Provide a developer-friendly string representation of the object.
-    # input: Book for which a string representation is desired. 
-    # output: string representation
     def __repr__(self):
         return "Book({}, '{}')".format(self.authors, self.title)
 
-
-    # Compare the Book object with another value to determine equality.
-    # input: Book against which to compare
-    # input: Another value to compare to the Book
-    # output: boolean indicating equality
     def __eq__(self, other):
         return (self is other or
                 type(other) == Book and
